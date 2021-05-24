@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+
+<head>
+
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: 1s linear;
+        }
+
+        body {
+            background: url(/images/bg_eleve.png) center top repeat-x #f7f2df;
+        }
+
+        body .accueil-header,
+        .accueil-body,
+        .accueil-footer {
+            width: 100%;
+        }
+
+        .accueil-header {
+            height: 5vh;
+            margin-top: 10vh;
+            display: grid;
+            place-content: center;
+            background-color: #aaccff99;
+            border-radius: 50vw;
+            box-shadow: 0 0 10vh -2vh #0066ff;
+        }
+
+        .accueil-body {
+            width: 100vw;
+            height: 29.99vh;
+            margin-top: 20vh;
+        }
+
+        .accueil-footer {
+            margin-bottom: 10vh;
+            margin-top: 20vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 5vh;
+            background-color: #aaccff99;
+            border-radius: 50vw;
+            box-shadow: 0 0 10vh -2vh #0066ff;
+        }
+
+        .header-log {
+            width: 60vw;
+            height: 30px;
+            padding: 5vh;
+            background-color: #aaccff;
+            border-radius: 50vw;
+            box-shadow: 0 0 10vh -2vh #0066ff;
+            display: grid;
+            place-content: center;
+        }
+
+        .accueil-component {
+            width: 44vw;
+            height: 20vh;
+            margin: 0 2vw;
+            display: inline-block;
+            padding-top: 5px;
+            border-radius: 50vw;
+        }
+
+        .accueil-component:hover {
+            box-shadow: 0 0 10vh -2vh #0066ff;
+            cursor: pointer;
+        }
+
+        .accueil-component:hover .accueil-component-title {
+            transform: translateY(25vh);
+        }
+
+        .accueil-component:hover .accueil-component-icon img {
+            height: 20vh;
+            border-radius: 50vw;
+        }
+
+        .materiel-color-orange {
+            background: #ff6600;
+        }
+
+        .materiel-color-gray {
+            background: #808080;
+        }
+
+        .accueil-component-icon {
+            margin: auto;
+            margin-top: -4vh;
+            width: fit-content;
+        }
+
+        .accueil-component-icon img {
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+        }
+
+        .accueil-component-title {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            z-index: -1;
+            transform: translateY(-5vh);
+        }
+
+        .accueil-component-title p {
+            font-size: 2vw;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        .pull-right {
+            float: left !important;
+        }
+
+        .pull-left {
+            float: right !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="accueil-header">
+        <div class="header-log">
+            <img id="logo-men" src="/images/LogoMenAr.png" style="width: 478px;height: 100px;">
+        </div>
+    </div>
+    <div class="accueil-body">
+
+        <table style="margin: auto;">
+            <tr>
+                <td>
+                    <div class="accueil-component materiel-color-gray" data-url="./waliye">
+                        <div class="accueil-component-title">
+                            <p>الفضاء الخاص بأمهات وآباء وأولياء التلميذات والتلاميذ</p>
+                        </div>
+                        <div class="accueil-component-icon">
+                            <img src="/images/img_bienvenue.gif"
+                                style="background-color:#808080;border: solid 5px #808080"/>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="accueil-component materiel-color-orange" data-url="./moutamadris">
+                        <div class="accueil-component-title">
+                            <p>الفضاء الخاص بالتلميذات والتلاميذ</p>
+                        </div>
+                        <div class="accueil-component-icon">
+                            <img src="/images/eleves.jpg" style="background-color:#ff6600;border: solid 5px #ff6600"/>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="accueil-footer">
+        <div class="pull-right">
+            <b>Version</b> 3.0
+        </div>
+        <div class="pull-left">
+            <strong>Copyright © 2021 | Developped by <a style="color: #0066ff;"
+                    href="https://www.linkedin.com/in/abdelmalek-meskik/">Abdelmalek Meskik</a></strong>
+        </div>
+
+    </div>
+
+    <script>
+
+        $(".accueil-component").click(function () {
+
+            var $url = $(this).data("url");
+
+            window.location.href = $url;
+        })
+
+    </script>
+
+</body>
+
+</html>
